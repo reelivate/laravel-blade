@@ -156,4 +156,16 @@ class Application extends Container implements ApplicationInterface
     public function shouldSkipMiddleware()
     {
     }
+
+    public function hasDebugModeEnabled()
+    {
+    }
+
+    public function publicPath($path = '')
+    {
+    }
+
+    public function langPath($path = '')
+    {
+    }
 }
