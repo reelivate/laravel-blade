@@ -10,9 +10,9 @@ class Application extends Container implements ApplicationInterface
 {
     use Macroable;
 
-    const VERSION = '1.6.2';
+    const VERSION = '1.7.1';
 
-    public function version()
+    public function version(): string
     {
         return static::VERSION;
     }
@@ -22,7 +22,7 @@ class Application extends Container implements ApplicationInterface
      *
      * @var callable[]
      */
-    protected $terminatingCallbacks = [];
+    protected array $terminatingCallbacks = [];
 
     /**
      * Register a terminating callback with the application.
@@ -30,7 +30,7 @@ class Application extends Container implements ApplicationInterface
      * @param  callable|string  $callback
      * @return $this
      */
-    public function terminating($callback)
+    public function terminating($callback): static
     {
         $this->terminatingCallbacks[] = $callback;
 
@@ -39,10 +39,8 @@ class Application extends Container implements ApplicationInterface
 
     /**
      * Terminate the application.
-     *
-     * @return void
      */
-    public function terminate()
+    public function terminate(): void
     {
         $index = 0;
 
@@ -157,7 +155,7 @@ class Application extends Container implements ApplicationInterface
     {
     }
 
-    public function hasDebugModeEnabled()
+    public function langPath($path = '')
     {
     }
 
@@ -165,7 +163,7 @@ class Application extends Container implements ApplicationInterface
     {
     }
 
-    public function langPath($path = '')
+    public function hasDebugModeEnabled()
     {
     }
 }
